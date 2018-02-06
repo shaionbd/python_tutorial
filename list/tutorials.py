@@ -96,3 +96,104 @@
 
 # site_url = "https://www.amazon.com/s/ref=sr_qz_back?sf=qz%2Crba&rh=i%3Amobile%2Ck%3Amobile&keywords=mobile&unfiltered=1&ie=UTF8&qid=1517822790"
 # trade_spider(site_url, "s-result-item")
+
+################################### Class
+# class Anime:
+#     name = ''
+#     def __init__(self, name = ''): # it's a constructor
+#         self.name = name
+#         if name == '':
+#             print("I love anime")
+#         else:
+#             print(str(name) + " loves anime")
+#     def one_piece(self):
+#         print("Chapter 893 is the best chapter so far in Whole Cake Island")
+#     def naruto(self):
+#         print("Shadow clone jutsu is the best jutsu Naruto has ever used")
+#     def get_name(self):
+#         return self.name
+
+# anime1 = Anime() 
+# anime2 = Anime("Shaion")
+# print(anime1.get_name())
+# print(anime2.get_name())
+
+# class Enemy:
+#     lifespan = 3
+#     def attack(self):
+#         print('You are being attacked')
+#         self.lifespan -= 1
+#     def check_life(self):
+#         if self.lifespan <= 0:
+#             print("You are dead")
+#         else:
+#             print("You have " + str(self.lifespan) +" lifes left")
+
+# enemy = Enemy()
+# enemy.attack()
+# enemy.check_life()
+# enemy.attack()
+# enemy.check_life()
+# enemy.attack()
+# enemy.check_life()
+
+################################# Inheritance
+# class Anime():
+#     def carton(self):
+#         print('Anime is not carton')
+
+# class Carton(Anime):
+#     def carton_and_anime(self, carton = ''):
+#         print(carton + ' is a carton as well as anime')
+
+# carton = Carton()
+# carton.carton()
+# carton.carton_and_anime("One Piece")
+
+# class Anime():
+#     def __init__(self):
+#         print("Hello Anime Lover")
+#     def anime_lover(self):
+#         print("I love anime")
+    
+# class Manga():
+#     def __init__(self):
+#         print("Hello Manga Lover")
+#     def manga_lover(self):
+#         print("I love manga")
+
+# class User(Anime, Manga):
+#     # def __init__(self):
+#     #     Manga()
+#     pass
+    
+
+# user = User()
+# user.anime_lover()
+# user.manga_lover()
+
+################################## Threading
+# import threading
+# class Messanger(threading.Thread):
+#     # def __init__(self, name, message):
+#     #     threading.__init__()
+#     #     print(str(name)+" "+str(message))
+#     def run(self):
+#         for _ in range(20):
+#             print(threading.currentThread().getName())
+
+# messanger1 = Messanger(name="Messanger 1 is running")
+# messanger2 = Messanger(name="Messagner 2 is running")
+
+# messanger1.start()
+# messanger2.start()
+
+##################################### zip 
+# first_name = ["Mahmudul", "Tanvir", "Shaion"]
+# last_name = ['Hasan', 'Hasan', 'Ahamed']
+
+# name = zip(first_name, last_name)
+# for fname, lname in name:
+#     print(fname, lname)
+
+
