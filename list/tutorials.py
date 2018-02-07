@@ -191,9 +191,57 @@
 ##################################### zip 
 # first_name = ["Mahmudul", "Tanvir", "Shaion"]
 # last_name = ['Hasan', 'Hasan', 'Ahamed']
-
+#
 # name = zip(first_name, last_name)
 # for fname, lname in name:
 #     print(fname, lname)
+
+########################################### image processing
+################### Croping Image
+# from PIL import Image
+# luffy = Image.open("../luffy.png")
+# #
+# luffy_width = int(luffy.size[0]/2)
+# luffy_height = int(luffy.size[1]/2)
+# # #
+# area = (int(luffy.size[0]/4),0, luffy_width+int(luffy.size[0]/4), luffy_height)
+#
+# luffy.crop(area).show()
+
+########################### merge and effect image
+# from PIL import Image
+# luffy = Image.open("../luffy.png")
+# zoro = Image.open("../zoro.jpg")
+# #
+# luffy_width = int(luffy.size[0]/2)
+# luffy_height = int(luffy.size[1]/2)
+# #
+# # print(str(luffy_width)+" "+str(luffy_height))
+# luffy = luffy.resize((luffy_width, luffy_height), Image.ANTIALIAS)
+# # #
+# area = (0,0, luffy_width, luffy_height)
+# zoro.paste(luffy, area)
+# luffy = luffy.resize((zoro.size[0], zoro.size[1]), Image.ANTIALIAS)
+# #
+# r1, g1, b1 = zoro.split()
+# r2, g2, b2, a1 = luffy.split()
+# new_img = Image.merge("RGB", (r1, g2, b1))
+# new_img.show()
+
+########### image filter
+# from PIL import Image
+# from PIL import ImageFilter
+#
+# zoro = Image.open("../zoro.jpg")
+# blur = zoro.filter(ImageFilter.BLUR)
+# detail = zoro.filter(ImageFilter.DETAIL)
+# edges = zoro.filter(ImageFilter.FIND_EDGES)
+# edges_enhance = zoro.filter(ImageFilter.EDGE_ENHANCE)
+#
+# blur.show();
+# detail.show();
+# edges.show();
+# edges_enhance.show();
+
 
 
