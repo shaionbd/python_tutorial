@@ -3,9 +3,10 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from matplotlib import style
-
-style.use('ggplot')
+import pickle
+# from matplotlib import style
+#
+# style.use('ggplot')
 
 # df = quandl.get("WIKI/GOOGL")
 # df = df[['Adj. Open', 'Adj. High', 'Adj. Low', 'Adj. Close', 'Adj. Volume']]
@@ -28,11 +29,20 @@ X = np.array(df.drop(['label'], 1))
 X_lately = X[-forecast_out:]
 y = np.array(df['label'])
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.2)
-clf = LinearRegression()
-clf.fit(X_train, y_train)
+# clf = LinearRegression()
+# clf.fit(X_train, y_train)
+
+# with open('linearregression.pickle', 'wb') as f:
+#     pickle.dump(clf, f)
+
+pickle_in = open('linearregression.pickle', 'rb')
+clf = pickle.load(pickle_in)
+
 accurecy = clf.score(X_test, y_test)
 predict = clf.predict(X_lately)
-print(predict)
+
+print(accurecy)
+
 
 
 
